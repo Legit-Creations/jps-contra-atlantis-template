@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import ClientProtector from "@components/ClientProtector";
+import ClientProtector from "@/components/ClientProtector";
 
 const inter = Inter({
   subsets: ["latin"],
