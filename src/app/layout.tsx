@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import ClientProtector from "@components/ClientProtector";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,6 +16,7 @@ const playfair = Playfair_Display({
 });
 
 const SITE_URL = "https://jponders.legitcreations.com.ng";
+
 const LOGO_URL =
   "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/jps_logo.svg";
 
@@ -77,9 +79,6 @@ export const metadata: Metadata = {
     },
   },
 
-  /**
-   * Open Graph metadata
-   */
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -102,9 +101,6 @@ export const metadata: Metadata = {
     ],
   },
 
-  /**
-   * X / Twitter metadata
-   */
   twitter: {
     card: "summary_large_image",
 
@@ -117,9 +113,6 @@ export const metadata: Metadata = {
     images: [OG_IMAGE_URL],
   },
 
-  /**
-   * Site icons
-   */
   icons: {
     icon: [
       {
@@ -231,6 +224,10 @@ export default function RootLayout({
       </head>
 
       <body className="antialiased bg-obsidian text-bone selection:bg-gold/30">
+        {/* Client-side protection */}
+        <ClientProtector />
+
+        {/* Application */}
         {children}
 
         {/* Organization + Person structured data */}
