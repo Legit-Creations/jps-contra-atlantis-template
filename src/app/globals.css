@@ -4,12 +4,14 @@
   /* High-Contrast Executive Palette */
   --font-display: var(--font-playfair), serif;
   --font-body: var(--font-inter), sans-serif;
+
   --color-obsidian: #050505;
   --color-bone: #FDFBF7;
   --color-gold: #946C00;
   --color-gold-light: #C5A059;
   --color-gold-dark: #856404;
   --color-ash: #575757;
+
   --font-size-huge: clamp(3rem, 10vw, 8rem);
 }
 
@@ -20,17 +22,49 @@
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-body);
   }
-  
-  h1, h2, h3, .font-display {
-    font-family: var(--font-display);
-    /* font-display: swap removed - Next.js handles it via next/font */
+
+  /*
+   * Asset Protection
+   *
+   * Deterrence only. Does not interfere with normal
+   * text selection, accessibility, or page interaction.
+   */
+  .asset-protected {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
   }
-  
+
+  /*
+   * Prevent native image/video dragging.
+   * Applied globally because dragging media away from
+   * the page provides little legitimate UX value.
+   */
+  img,
+  video {
+    -webkit-user-drag: none;
+  }
+
+  /*
+   * Important protected assets.
+   *
+   * pointer-events is intentionally NOT disabled here.
+   * This prevents protection CSS from breaking clickable
+   * images, galleries, links, and interactive components.
+   */
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+  }
+
   h1 {
     font-size: revert;
     margin-block: revert;
   }
-  
+
   .content-justify {
     text-align: justify;
     text-justify: inter-word;
@@ -38,7 +72,8 @@
   }
 }
 
-/* Scrollbar optimized for Spanish Minimalist Aesthetics */
+/* Scrollbar optimized for minimalist visual system */
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -49,7 +84,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-gold);
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 html {
