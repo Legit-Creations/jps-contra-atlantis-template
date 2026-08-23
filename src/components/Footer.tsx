@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import {
   ArrowRight,
   ArrowUp,
@@ -13,11 +12,7 @@ import {
 import { motion } from "framer-motion";
 
 export default function Footer() {
-  const [ currentYear, setCurrentYear ] = useState(2026);
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+  const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -34,7 +29,6 @@ export default function Footer() {
       {/* Main Footer */}
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-12 md:gap-8 lg:gap-12">
-
           {/* Brand / Contact */}
           <div className="md:col-span-5 lg:col-span-5">
             <div className="max-w-xl">
@@ -165,20 +159,28 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/[0.07] bg-black">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-7 px-6 py-8 sm:px-8 md:flex-row lg:px-12">
-
+          {/* Copyright / Legal */}
           <div className="flex flex-col items-center gap-2 text-center text-[10px] uppercase tracking-[0.14em] text-white/25 sm:flex-row sm:gap-5 md:text-left">
             <span className="flex items-center gap-1.5">
               <Copyright size={12} />
               {currentYear} JPS Institutional Portfolio
             </span>
 
-            <span className="hidden text-white/10 sm:inline">
-              /
-            </span>
+            <span className="hidden text-white/10 sm:inline">/</span>
 
             <span>All Rights Reserved</span>
+
+            <span className="hidden text-white/10 sm:inline">/</span>
+
+            <a
+              href="/disclaimer"
+              className="transition-colors duration-300 hover:text-[#c9a24a]"
+            >
+              Disclaimer
+            </a>
           </div>
 
+          {/* Return to Top */}
           <button
             type="button"
             onClick={scrollToTop}
@@ -272,9 +274,9 @@ function SocialLink({
       title={label}
       {...(isExternal
         ? {
-          target: "_blank",
-          rel: "noopener noreferrer",
-        }
+            target: "_blank",
+            rel: "noopener noreferrer",
+          }
         : {})}
       className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/75 transition-all duration-300 hover:border-[#c9a24a] hover:bg-[#c9a24a] hover:text-black"
     >
