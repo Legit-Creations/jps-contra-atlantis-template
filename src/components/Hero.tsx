@@ -114,36 +114,7 @@ export default function Hero() {
             "
           >
             <div className="max-w-5xl">
-              <h1
-  className="
-    font-serif 
-    text-[3.25rem]                
-    leading-[1.05] 
-    tracking-[-0.055em] 
-    text-obsidian 
-    sm:text-6xl 
-    md:text-7xl 
-    lg:text-[6.8rem] 
-    xl:text-[7.5rem] 
-  "
->
-  <RevealLine>
-    Technology, 
-  </RevealLine>
-
-  <RevealLine className="mt-1">
-    <span className="italic text-obsidian/65">
-      Operations
-    </span>
-    {" & "} 
-  </RevealLine>
-
-  <RevealLine className="mt-1">
-    Digital Infrastructure 
-  </RevealLine>
-</h1>
-With this
-<h1
+    <h1
   className="
     font-serif
     text-[3.25rem]
@@ -171,7 +142,6 @@ With this
     Digital Infrastructure
   </span>
 </h1>
-
               <RevealLine
                 as="p"
                 className="
