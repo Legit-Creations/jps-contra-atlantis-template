@@ -73,7 +73,7 @@ export default function Footer() {
                 />
 
                 <SocialLink
-                  href="mailto:operations@legitcreations.com.ng"
+                  href="mailto:legitcreations.online@gmail.com"
                   label="Email Operations"
                   icon={<Mail size={18} strokeWidth={1.7} />}
                 />
